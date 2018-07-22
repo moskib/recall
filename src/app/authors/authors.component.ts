@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorsComponent implements OnInit {
 
+  authors: any[] = [
+    { name: 'Albert Einstein' },
+    { name: 'Steve Jobs' },
+    { name: 'Bill Gates' },
+    { name: 'Grant Cardone' },
+    { name: 'Jeff Bezos' }
+  ];
+
   constructor() { }
 
   ngOnInit() {
