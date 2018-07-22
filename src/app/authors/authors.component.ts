@@ -1,23 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'app-authors',
   templateUrl: './authors.component.html',
   styleUrls: ['./authors.component.css']
 })
-export class AuthorsComponent implements OnInit {
+export class AuthorsComponent {
 
-  authors: any[] = [
-    { name: 'Albert Einstein' },
-    { name: 'Steve Jobs' },
-    { name: 'Bill Gates' },
-    { name: 'Grant Cardone' },
-    { name: 'Jeff Bezos' }
-  ];
+  quotes$;
+  quoteList: AngularFireList<{}>;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(db: AngularFireDatabase) {
+    this.quotes$ = db.list('/quotes').valueChanges();
   }
-
 }
