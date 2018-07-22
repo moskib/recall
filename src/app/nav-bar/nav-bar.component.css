@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
+.navbar {
+    /* background: linear-gradient(to bottom right, #3D7CA8 0%, rgba(0, 0, 0, 0) 100%); */
+    transition: all .8s;
+}
+
+.navbar:hover {
+    background-color: #002621;
+}
+
+.navbar-brand {
+    color: white;
+    font-family: 'Satisfy', cursive;
+    font-size: 2em;
+}
+
+.nav-link {
+    color: white;
+    transition: all .4s;
+    text-shadow: 2px 2px 4px #002621;
+}
+
+.nav-link:hover {
+    color: #F1C7BB;
+}
+
