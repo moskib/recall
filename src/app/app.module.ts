@@ -15,6 +15,7 @@ import { TopicsComponent } from './topics/topics.component';
 // Other:
 import { environment } from './../environments/environment';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthorComponent } from './author/author.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     AuthorsComponent,
     TopicsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
