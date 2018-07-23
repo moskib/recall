@@ -11,26 +11,26 @@
 .jumbotron-header {
     color: white;
     text-align: center;
-    text-shadow: 2px 2px 4px #002621, 0 0 25px #002621, 0 0 5px black;
+    text-shadow: 2px 2px 4px #013E5B, 0 0 25px #013E5B, 0 0 5px black;
 }
 
 .lead {
     color: white;
     text-align: center;
-    text-shadow: 2px 2px 4px #002621, 0 0 25px #002621, 0 0 5px black;
+    text-shadow: 2px 2px 4px #013E5B, 0 0 25px #013E5B, 0 0 5px black;
 }
 
 .card {
-    background: linear-gradient(to right, #002621 0%,rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to right, #013E5B 0%,rgba(0, 0, 0, 0) 100%);
 }
 
 .card:hover {
-    background: #002621;
+    background: #013E5B;
     transition: all .6s;
 }
 
 .card-header {
-    background: linear-gradient(to right, #002621 0%,rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to right, #013E5B 0%,rgba(0, 0, 0, 0) 100%);
     color: white;
 }
 
@@ -40,11 +40,11 @@
 
 .btn {
     color: white;
-    background: linear-gradient(to bottom right, #002621 0%,rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom right, #013E5B 0%,rgba(0, 0, 0, 0) 100%);
     transition: all .3s;
 }
 
 .btn:hover {
-    background-color: #002621;
+    background-color: #3D7CA8;
 }
 

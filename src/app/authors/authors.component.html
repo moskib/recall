@@ -1,3 +1,11 @@
-<p>
-  authors works!
-</p>
+<div class="card-columns mt-3">
+  <div class="card p-3" *ngFor="let author of authors$ | async">
+    <blockquote class="blockquote mb-0">
+      <p>
+        {{ author.name }}
+      </p>
+        <button class="btn btn-block">View</button>
+    </blockquote>
+  </div>
+</div>
+
