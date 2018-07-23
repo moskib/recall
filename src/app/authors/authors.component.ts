@@ -6,12 +6,17 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
   templateUrl: './authors.component.html',
   styleUrls: ['./authors.component.css']
 })
-export class AuthorsComponent {
+export class AuthorsComponent implements OnInit {
 
-  quotes$;
-  quoteList: AngularFireList<{}>;
+  authors$;
 
-  constructor(db: AngularFireDatabase) {
-    this.quotes$ = db.list('/quotes').valueChanges();
+  constructor(private db: AngularFireDatabase) {
+  }
+
+  ngOnInit(): void {
+    this.authors$ = this.db.list(
+      'authors',
+      query =>
+        query.orderByChild('name')).valueChanges();
   }
 }

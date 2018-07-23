@@ -1,15 +1,10 @@
 <div class="card-columns mt-3">
-  <div class="card p-3" *ngFor="let quote of quotes$ | async">
+  <div class="card p-3" *ngFor="let author of authors$ | async">
     <blockquote class="blockquote mb-0">
       <p>
-        "{{ quote.quote }}"
+        {{ author.name }}
       </p>
-      <hr class="hr">
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          {{ quote.author }}
-        </small>
-      </footer>
+        <button class="btn btn-block">View Quotes by {{ author.name }}</button>
     </blockquote>
   </div>
 </div>
