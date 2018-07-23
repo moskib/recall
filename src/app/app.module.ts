@@ -14,6 +14,7 @@ import { TopicsComponent } from './topics/topics.component';
 
 // Other:
 import { environment } from './../environments/environment';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { environment } from './../environments/environment';
     NavBarComponent,
     HomeComponent,
     AuthorsComponent,
-    TopicsComponent
+    TopicsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,10 @@ import { environment } from './../environments/environment';
       {
         path: 'topics',
         component: TopicsComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
       }
     ]),
     AngularFireModule.initializeApp(environment.firebase),
