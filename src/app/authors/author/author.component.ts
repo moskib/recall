@@ -12,7 +12,7 @@ export class AuthorComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      const author = params.get('author.name'.replace(' ', '_'));
+      const author = params.get('author.name');
       console.log(author);
     })
   }

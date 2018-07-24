@@ -12,10 +12,13 @@ import { HomeComponent } from './home/home.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { TopicsComponent } from './topics/topics.component';
 import { AuthorComponent } from './authors/author/author.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+// Services:
+import { AuthorService } from './services/author.service';
 
 // Other:
 import { environment } from './../environments/environment';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -55,7 +58,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    AuthorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

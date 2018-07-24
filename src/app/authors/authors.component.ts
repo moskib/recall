@@ -1,5 +1,6 @@
+import { AuthorService } from './../services/author.service';
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-authors',
@@ -10,13 +11,14 @@ export class AuthorsComponent implements OnInit {
 
   authors$;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private service: AuthorService) {
   }
 
   ngOnInit(): void {
-    this.authors$ = this.db.list(
-      'authors',
-      query =>
-        query.orderByChild('name')).valueChanges();
+    // this.authors$ = this.service.list(
+    //   'authors',
+    //   query =>
+    //     query.orderByChild('name')).valueChanges();
+    this.authors$ = this.service.getByChild('name');
   }
 }
