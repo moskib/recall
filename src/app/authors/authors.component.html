@@ -4,7 +4,7 @@
       <p>
         {{ author.name }}
       </p>
-        <button class="btn btn-block">View</button>
+      <a [routerLink]="['/authors', author.name.replace(' ', '_').toLowerCase()]" class="btn btn-block">View</a>
     </blockquote>
   </div>
 </div>

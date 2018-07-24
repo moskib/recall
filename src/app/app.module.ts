@@ -11,11 +11,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { TopicsComponent } from './topics/topics.component';
+import { AuthorComponent } from './authors/author/author.component';
 
 // Other:
 import { environment } from './../environments/environment';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthorComponent } from './author/author.component';
 
 
 @NgModule({
@@ -34,6 +34,10 @@ import { AuthorComponent } from './author/author.component';
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'authors/:author',
+        component: AuthorComponent
       },
       {
         path: 'authors',
