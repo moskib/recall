@@ -1,3 +1,4 @@
+import { QuotesService } from './services/quotes.service';
 // Modules:
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -59,7 +60,8 @@ import { environment } from './../environments/environment';
     AngularFireDatabaseModule
   ],
   providers: [
-    AuthorService
+    AuthorService,
+    QuotesService
   ],
   bootstrap: [AppComponent]
 })

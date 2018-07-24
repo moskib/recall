@@ -7,7 +7,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class DataService {
   constructor(private collection: string,
     private db: AngularFireDatabase) {
-    
+
   }
 
   getAll() {
@@ -17,5 +17,9 @@ export class DataService {
   getByChild(child: string) {
     return this.db.list(this.collection,
       query => query.orderByChild(child)).valueChanges();
+  }
+
+  getByChildEqualTo(child: string, value: string){
+    return this.db.list(this.collection, query => query.orderByChild(child).equalTo(value)).valueChanges();
   }
 }
