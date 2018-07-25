@@ -1,4 +1,3 @@
-import { QuotesService } from './services/quotes.service';
 // Modules:
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,9 +13,12 @@ import { AuthorsComponent } from './authors/authors.component';
 import { TopicsComponent } from './topics/topics.component';
 import { AuthorComponent } from './authors/author/author.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { QuoteComponent } from './quote/quote.component';
+
 
 // Services:
 import { AuthorService } from './services/author.service';
+import { QuotesService } from './services/quotes.service';
 
 // Other:
 import { environment } from './../environments/environment';
@@ -30,7 +32,8 @@ import { environment } from './../environments/environment';
     AuthorsComponent,
     TopicsComponent,
     NotFoundComponent,
-    AuthorComponent
+    AuthorComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,

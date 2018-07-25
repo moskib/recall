@@ -19,7 +19,10 @@ export class DataService {
       query => query.orderByChild(child)).valueChanges();
   }
 
-  getByChildEqualTo(child: string, value: string){
-    return this.db.list(this.collection, query => query.orderByChild(child).equalTo(value)).valueChanges();
+  getByChildEqualTo(child: string, value: string) {
+    return this.db.list(
+      this.collection,
+      query => query.orderByChild(child)
+        .equalTo(value)).valueChanges();
   }
 }

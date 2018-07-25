@@ -1,0 +1,18 @@
+.card {
+    transition: all .3s;
+}
+
+.blockquote-footer {
+    transition: all .3s;
+}
+
+.card:hover {
+    background: #3D7CA8;
+    color: white;
+    cursor: pointer;
+}
+
+.card:hover .blockquote-footer {
+    color: white;
+}
+
