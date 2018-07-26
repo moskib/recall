@@ -1,13 +1,17 @@
 <div class="card-columns mt-4">
   <div *ngFor="let quote of quotes$ | async"
+       #currentQuote
+       (click)="onClick(quote.key)"
        class="card p-3">
-    <blockquote class="blockquote">
-      <p>{{ quote.quote }}</p>
-    </blockquote>
-    <footer class="blockquote-footer">
-      <small>
-        {{ quote.author }}
-      </small>
-    </footer>
+    <div [routerLink]="['/authors', author.replace(' ', '_').toLowerCase(), quote.key]">
+      <blockquote class="blockquote">
+        <p>{{ quote.value.quote }}</p>
+      </blockquote>
+      <footer class="blockquote-footer">
+        <small>
+          {{ quote.value.author }}
+        </small>
+      </footer>
+    </div>
   </div>
 </div>

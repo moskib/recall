@@ -43,6 +43,10 @@ import { environment } from './../environments/environment';
         component: HomeComponent
       },
       {
+        path: 'authors/:author/:id',
+        component: QuoteComponent
+      },
+      {
         path: 'authors/:author',
         component: AuthorComponent
       },

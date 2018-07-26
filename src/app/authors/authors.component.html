@@ -1,10 +1,12 @@
 <div class="card-columns mt-4">
-  <div class="card p-3" *ngFor="let author of authors$ | async">
+  <div class="card p-3"
+       *ngFor="let author of authors$ | async">
     <blockquote class="blockquote mb-0">
       <p>
-        {{ author.name }}
+        {{ author.value.name }}
       </p>
-      <a [routerLink]="['/authors', author.name.replace(' ', '_').toLowerCase()]" class="btn btn-block">View</a>
+      <a [routerLink]="['/authors', author.value.name.replace(' ', '_').toLowerCase()]"
+         class="btn btn-block">View</a>
     </blockquote>
   </div>
 </div>

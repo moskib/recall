@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorService extends DataService{
+export class AuthorService extends DataService {
 
   constructor(db: AngularFireDatabase) {
     super('authors', db);
