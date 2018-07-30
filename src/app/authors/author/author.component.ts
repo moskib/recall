@@ -1,6 +1,7 @@
-import { QuotesService } from './../../services/quotes.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { QuotesService } from './../../services/quotes.service';
+import { StringService } from '../../services/string.service';
 
 @Component({
   selector: 'app-author',
@@ -13,25 +14,16 @@ export class AuthorComponent implements OnInit {
   quotes$;
 
   constructor(private route: ActivatedRoute,
-    private service: QuotesService) { }
+    private service: QuotesService, private strService: StringService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.author = this.titleCase(
+      this.author = this.strService.titleCase(
         params.get('author')
           .replace('_', ' '));
     });
 
     this.quotes$ = this.service.getByChildEqualTo('author', this.author);
-  }
-
-  // might need to put this in a class of its own later:
-  titleCase(str) {
-    str = str.toLowerCase().split(' ');
-    for (let i = 0; i < str.length; i++) {
-      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
-    }
-    return str.join(' ');
   }
 
   // When the user clicks on a specific quote:

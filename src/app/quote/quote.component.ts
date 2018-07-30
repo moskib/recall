@@ -1,3 +1,5 @@
+import { StringService } from './../services/string.service';
+import { QuotesService } from './../services/quotes.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,14 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class QuoteComponent implements OnInit {
 
-  quote;
+  quoteKey;
+  test$;
+  author;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+  private dbService: QuotesService, 
+  private strService: StringService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.quote = params.get('quote');
+      this.author =  this.strService.titleCase(params.get('author').replace('_', ' ')) ;
+      this.quoteKey = params.get('quote');
     });
+
+    this.test$ = this.dbService.getChildById(this.quoteKey);
   }
 
 }

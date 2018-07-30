@@ -49,4 +49,8 @@ export class DataService {
             return this.arrayActionMapper(changes);
           })));
   }
+
+  getChildById(childId: string) {
+    return this.db.object(this.collection + "/" + childId).valueChanges();
+  }
 }

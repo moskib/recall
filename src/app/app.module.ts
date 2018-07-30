@@ -19,6 +19,8 @@ import { QuoteComponent } from './quote/quote.component';
 // Services:
 import { AuthorService } from './services/author.service';
 import { QuotesService } from './services/quotes.service';
+import { StringService } from './services/string.service';
+
 
 // Other:
 import { environment } from './../environments/environment';
@@ -43,7 +45,7 @@ import { environment } from './../environments/environment';
         component: HomeComponent
       },
       {
-        path: 'authors/:author/:id',
+        path: 'authors/:author/:quote',
         component: QuoteComponent
       },
       {
@@ -68,7 +70,8 @@ import { environment } from './../environments/environment';
   ],
   providers: [
     AuthorService,
-    QuotesService
+    QuotesService,
+    StringService
   ],
   bootstrap: [AppComponent]
 })
