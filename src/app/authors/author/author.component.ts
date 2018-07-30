@@ -14,7 +14,8 @@ export class AuthorComponent implements OnInit {
   quotes$;
 
   constructor(private route: ActivatedRoute,
-    private service: QuotesService, private strService: StringService) { }
+    private service: QuotesService, 
+    private strService: StringService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -23,7 +24,8 @@ export class AuthorComponent implements OnInit {
           .replace('_', ' '));
     });
 
-    this.quotes$ = this.service.getByChildEqualTo('author', this.author);
+    this.quotes$ = this.service
+      .getByChildEqualTo('author', this.author);
   }
 
   // When the user clicks on a specific quote:

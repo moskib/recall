@@ -33,7 +33,9 @@ export class DataService {
 
   getByChild(child: string) {
     return this.db.list(this.collection,
-      query => query.orderByChild(child)).snapshotChanges().pipe(
+      query => query.orderByChild(child))
+      .snapshotChanges()
+      .pipe(
         map((changes => {
           return this.arrayActionMapper(changes);
         }))

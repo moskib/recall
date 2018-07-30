@@ -11,20 +11,25 @@ import { ActivatedRoute } from '@angular/router';
 export class QuoteComponent implements OnInit {
 
   quoteKey;
-  test$;
+  quote$;
   author;
 
   constructor(private route: ActivatedRoute,
-  private dbService: QuotesService, 
-  private strService: StringService) { }
+    private dbService: QuotesService,
+    private strService: StringService) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.author =  this.strService.titleCase(params.get('author').replace('_', ' ')) ;
-      this.quoteKey = params.get('quote');
-    });
+    this.route.paramMap.subscribe(
+      params => {
+        this.author = this.strService
+          .titleCase(
+            params.get('author').replace('_', ' ')
+          );
+        this.quoteKey = params.get('quote');
+      });
 
-    this.test$ = this.dbService.getChildById(this.quoteKey);
+    this.quote$ = this.dbService
+      .getChildById(this.quoteKey);
   }
 
 }
