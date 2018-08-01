@@ -1,7 +1,5 @@
 <div class="card-columns mt-4">
   <div *ngFor="let quote of quotes$ | async"
-       #currentQuote
-       (click)="onClick(quote.key)"
        class="card p-3">
     <div [routerLink]="['/authors', author.replace(' ', '_').toLowerCase(), quote.key]">
       <blockquote class="blockquote">

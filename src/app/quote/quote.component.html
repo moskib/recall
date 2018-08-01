@@ -1,4 +1,8 @@
 <div class="jumbotron mt-4">
   <h1 class="display-4">"{{ (quote$ | async)?.quote }}"</h1>
   <h6 class="pt-3">–{{ (quote$ | async)?.author}}</h6>
+  <button [routerLink]="['/authors', author.replace(' ', '_').toLowerCase()]"
+    class="btn btn-primary float-right">
+    Back to author
+  </button>
 </div>

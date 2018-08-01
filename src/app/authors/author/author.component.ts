@@ -27,9 +27,4 @@ export class AuthorComponent implements OnInit {
     this.quotes$ = this.service
       .getByChildEqualTo('author', this.author);
   }
-
-  // When the user clicks on a specific quote:
-  onClick(currentQuote) {
-    console.log(currentQuote);
-  }
 }
